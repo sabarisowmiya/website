@@ -5,12 +5,12 @@ export const products: Product[] = [
   // Soaps (5 varieties)
   {
     id: 'soap-1',
-    name: 'Neem Soap',
+    name: 'Kuppaimeni Soap',
     category: 'soaps',
-    description: 'A natural soap infused with neem extracts, known for its antibacterial and purifying properties. Excellent for keeping skin clear and healthy.',
+    description: 'A natural soap infused with kuppaimeni extracts, known for its antibacterial and anti-inflammatory properties. Excellent for treating skin problems and keeping it clear and healthy.',
     price: 45,
     image: '/neemsoap.jpg',
-    dataAiHint: 'neem soap'
+    dataAiHint: 'kuppaimeni soap'
   },
   {
     id: 'soap-2',
@@ -34,7 +34,7 @@ export const products: Product[] = [
     id: 'soap-4',
     name: 'Multani Mitti Soap',
     category: 'soaps',
-    description: 'Activated charcoal works to draw out impurities, leaving your skin feeling clean and purified.',
+    description: 'Multani Mitti soap deeply cleanses the skin by removing excess oil, dirt, and impurities, thus preventing acne and pimples. Its natural absorbent properties help to even out skin tone and impart a healthy, radiant glow.',
     price: 45,
     image: '/Multanisoap.jpg',
     dataAiHint: 'multani mitti soap'
@@ -43,7 +43,7 @@ export const products: Product[] = [
     id: 'soap-5',
     name: 'Charcoal Soap',
     category: 'soaps',
-    description: 'A cool and invigorating soap with peppermint and tea tree oil. Provides a tingly clean feeling.',
+    description: 'Charcoal soap acts like a magnet to draw out deep-seated impurities, dirt, and excess oil, leaving your skin thoroughly cleansed and detoxified. Its purifying properties help to minimize pores and reduce acne breakouts, promoting a clearer and more balanced complexion.',
     price: 86,
     image: '/charcoalsoap.jpg',
     dataAiHint: 'charcoal soap'
@@ -62,7 +62,7 @@ export const products: Product[] = [
     id: 'hm-2',
     name: 'Blood +',
     category: 'health-mixes',
-    description: 'A specially formulated health mix designed to support and enhance vitality, packed with essential nutrients.',
+    description: 'Rich in iron and folate, beetroot malt is a natural health drink that helps increase hemoglobin levels, making it effective in combating anemia and fatigue. Its natural nitrates boost stamina and improve blood circulation, contributing to better heart health and a radiant complexion.',
     price: 240,
     image: '/Blood +.jpg',
     dataAiHint: 'health drink'
@@ -71,7 +71,7 @@ export const products: Product[] = [
     id: 'hm-3',
     name: 'ABC Malt',
     category: 'health-mixes',
-    description: 'Energy-boosting health drink packed with essential nutrients, delivering rich taste, strength, and daily wellness support.',
+    description: 'ABC malt is a nutrient-dense health drink made from a blend of Apple, Beetroot, and Carrot, which boosts overall immunity and energy levels. It is packed with antioxidants, vitamins, and minerals that promote radiant skin, improve vision, and support cardiovascular health.',
     price: 280,
     image: '/ABC Malt.jpg',
     dataAiHint: 'malt drink'

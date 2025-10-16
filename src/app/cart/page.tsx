@@ -88,7 +88,7 @@ export default function CartPage() {
               </div>
             </CardContent>
             <CardFooter>
-              <Button className="w-full" size="lg" onClick={() => router.push('/login')}>
+              <Button className="w-full" size="lg" onClick={() => router.push('/checkout')}>
                 Proceed to Checkout
               </Button>
             </CardFooter>

@@ -10,16 +10,18 @@ export default function Home() {
     <div className="space-y-16">
       {/* Hero Section */}
       <section className="text-center">
-        <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight mb-4">
-          Purely Natural, Simply Good.
-        </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-          Discover our handcrafted soaps and wholesome health mixes, made with the finest natural ingredients for a healthier you.
-        </p>
-        <div className="flex gap-4 justify-center">
-          <Button size="lg" asChild>
-            <Link href="#categories">Shop Now</Link>
-          </Button>
+        <div className="bg-green-100/50 rounded-3xl p-8 md:p-12 lg:p-16">
+          <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight mb-4">
+            Purely Natural, Simply Good.
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+            Discover our handcrafted soaps and wholesome health mixes, made with the finest natural ingredients for a healthier you.
+          </p>
+          <div className="flex gap-4 justify-center">
+            <Button size="lg" asChild>
+              <Link href="#categories">Shop Now</Link>
+            </Button>
+          </div>
         </div>
       </section>
 

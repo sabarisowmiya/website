@@ -1,0 +1,67 @@
+/* [project]/src/components/ViewDetailsButton.css [app-client] (css) */
+.button {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border: 3px solid hsla(var(--primary-foreground), .3);
+  cursor: pointer;
+  border-radius: 9999px;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-block: .5rem;
+  padding-inline: 1.25rem;
+  font-size: 15px;
+  font-weight: bold;
+  transition: all .3s ease-in-out;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px #0003;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all .3s ease-in-out;
+}
+
+.button:hover {
+  border-color: hsla(var(--primary-foreground), .6);
+  transform: scale(1.05);
+}
+
+.button:hover .icon {
+  transform: translate(4px);
+}
+
+.button:hover:before {
+  animation: 1.5s ease-out infinite shine;
+}
+
+.button:before {
+  content: "";
+  opacity: .6;
+  background-image: linear-gradient(120deg, #fff0 30%, #fffc, #fff0 70%);
+  width: 100px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100px;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+/*# sourceMappingURL=src_components_ViewDetailsButton_css_f9ee138c._.single.css.map*/

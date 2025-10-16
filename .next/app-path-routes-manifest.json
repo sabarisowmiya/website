@@ -1,0 +1,13 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/account/page": "/account",
+  "/cart/page": "/cart",
+  "/checkout/page": "/checkout",
+  "/admin/generate-description/page": "/admin/generate-description",
+  "/login/page": "/login",
+  "/page": "/",
+  "/products/[category]/[productId]/page": "/products/[category]/[productId]",
+  "/products/[category]/page": "/products/[category]",
+  "/signup/page": "/signup"
+}

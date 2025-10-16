@@ -2,10 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ShoppingCart, Leaf, User } from 'lucide-react';
+import { ShoppingCart, Leaf } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { cn } from '@/lib/utils';
-import { Button } from './ui/button';
 
 export function Header() {
   const { itemCount } = useCart();
@@ -22,9 +21,6 @@ export function Header() {
     prevItemCount.current = itemCount;
   }, [itemCount]);
 
-  // Mock logged in state
-  const isLoggedIn = true;
-
   return (
     <header className="bg-background/80 backdrop-blur-sm sticky top-0 z-40 border-b">
       <div className="container mx-auto px-4 flex justify-between items-center h-16">
@@ -37,23 +33,6 @@ export function Header() {
           <Link href="/products/health-mixes" className="hover:text-primary transition-colors">Health Mixes</Link>
         </nav>
         <div className="flex items-center gap-4">
-          {isLoggedIn ? (
-             <Button variant="ghost" asChild>
-               <Link href="/account">
-                 <User className="mr-2 h-4 w-4" />
-                 Account
-               </Link>
-             </Button>
-          ) : (
-            <>
-              <Button variant="ghost" asChild>
-                <Link href="/login">Login</Link>
-              </Button>
-              <Button variant="default" asChild>
-                <Link href="/signup">Sign Up</Link>
-              </Button>
-            </>
-          )}
           <Link href="/cart" className="relative p-2" aria-label={`Shopping cart with ${itemCount} items`}>
             <ShoppingCart className="w-6 h-6 text-foreground" />
             {itemCount > 0 && (
