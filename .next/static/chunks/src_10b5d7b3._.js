@@ -28,13 +28,18 @@ _s(useCart, "b9L3QQ+jgeyIrH0NfHrJ8nn7VMU=");
 const CartProvider = ({ children })=>{
     _s1();
     const [cartItems, setCartItems] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
-    const [subtotal, setSubtotal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CartProvider.useEffect": ()=>{
-            const storedCart = localStorage.getItem('cart');
-            if (storedCart) {
-                setCartItems(JSON.parse(storedCart));
+            try {
+                const storedCart = localStorage.getItem('cart');
+                if (storedCart) {
+                    setCartItems(JSON.parse(storedCart));
+                }
+            } catch (error) {
+                console.error("Failed to parse cart from localStorage", error);
+                // If parsing fails, start with an empty cart
+                setCartItems([]);
             }
             setIsLoading(false);
         }
@@ -43,33 +48,28 @@ const CartProvider = ({ children })=>{
         "CartProvider.useEffect": ()=>{
             if (!isLoading) {
                 localStorage.setItem('cart', JSON.stringify(cartItems));
-                const newSubtotal = cartItems.reduce({
-                    "CartProvider.useEffect.newSubtotal": (acc, item)=>acc + (item.price || 0) * item.quantity
-                }["CartProvider.useEffect.newSubtotal"], 0);
-                setSubtotal(newSubtotal);
             }
         }
     }["CartProvider.useEffect"], [
         cartItems,
         isLoading
     ]);
-    const addToCart = (product)=>{
+    const addToCart = (product, quantity = 1)=>{
         setCartItems((prevItems)=>{
             const existingItem = prevItems.find((item)=>item.id === product.id);
             if (existingItem) {
                 return prevItems.map((item)=>item.id === product.id ? {
                         ...item,
-                        quantity: item.quantity + 1
+                        quantity: item.quantity + quantity
                     } : item);
-            } else {
-                return [
-                    ...prevItems,
-                    {
-                        ...product,
-                        quantity: 1
-                    }
-                ];
             }
+            return [
+                ...prevItems,
+                {
+                    ...product,
+                    quantity
+                }
+            ];
         });
     };
     const removeFromCart = (productId)=>{
@@ -88,6 +88,8 @@ const CartProvider = ({ children })=>{
     const clearCart = ()=>{
         setCartItems([]);
     };
+    const itemCount = cartItems.reduce((total, item)=>total + item.quantity, 0);
+    const subtotal = cartItems.reduce((total, item)=>total + item.price * item.quantity, 0);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(CartContext.Provider, {
         value: {
             cartItems,
@@ -95,17 +97,18 @@ const CartProvider = ({ children })=>{
             removeFromCart,
             updateQuantity,
             clearCart,
+            itemCount,
             subtotal,
             isLoading
         },
         children: children
     }, void 0, false, {
         fileName: "[project]/src/context/CartContext.tsx",
-        lineNumber: 88,
+        lineNumber: 97,
         columnNumber: 5
     }, this);
 };
-_s1(CartProvider, "TGkJ+5s1vQZIIeuQX0gdwANxjYM=");
+_s1(CartProvider, "pv5mn0AU/YELyu06eaqtasCu+1c=");
 _c = CartProvider;
 var _c;
 __turbopack_context__.k.register(_c, "CartProvider");
